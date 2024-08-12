@@ -1,0 +1,20 @@
+import { ReactNode } from "react"
+import { ButtonElement } from "./styles"
+
+type Props = {
+    children: ReactNode,
+    onClick?: () => void,
+    size?: 'sm' | 'md',
+    borderRadius?: 'sm' | 'md' | 'rounded',
+    width?: string
+}
+
+const Button = ({ children, onClick, size = 'sm', borderRadius = 'sm', width = '100%' }: Props) => {
+    return (
+        <ButtonElement onClick={onClick} $size={size} $borderRadius={borderRadius} $width={width}>
+            {children}
+        </ButtonElement>
+    )
+}
+
+export default Button;
